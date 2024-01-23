@@ -1,6 +1,8 @@
 const inputBox = document.querySelector('.input-box')
 const listContainer = document.querySelector('.list-container')
 
+
+//function to add tasks to task list
 function addTask(){
 	if(inputBox.value === ''){
 		alert('You must write something!');
@@ -16,3 +18,13 @@ function addTask(){
 	}
 	inputBox.value = '';
 }
+
+//creates event that will toggle check class when clicked, or remove if X is pressed
+listContainer.addEventListener('click', function(e){
+	if(e.target.tagName === "LI"){
+		e.target.classList.toggle("checked")
+	}
+	else if(e.target.tagName === "SPAN"){
+		e.target.parentElement.remove();
+	}
+}, false);
