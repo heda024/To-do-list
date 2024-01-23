@@ -32,7 +32,7 @@ listContainer.addEventListener('click', function(e){
 	}
 }, false);
 
-// Saves the data to the local storage
+// Saves the data to the local storage so it will stay when you refresh the page 
 function saveData(){
 	localStorage.setItem('data', listContainer.innerHTML);
 }
